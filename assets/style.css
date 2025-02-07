@@ -10,11 +10,13 @@ body {
 	font-family: 'Crimson Pro', sans-serif;
 	margin: 0;
 	padding: 0;
-	min-height: 100vh; /* Ensures full height for centering */
+	min-height: 100vh;
+	/* Ensures full height for centering */
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	text-align: center;
+	font-size: 1rem;
 }
 
 .logo {
@@ -49,9 +51,11 @@ footer {
 footer .container {
 	display: flex;
 	flex-direction: column;
-	align-items: center; /* Centraliza os links */
-	gap: 10px; /* Espaçamento entre os links */
-  }
+	align-items: center;
+	/* Centraliza os links */
+	gap: 10px;
+	/* Espaçamento entre os links */
+}
 
 .button {
 	display: inline-block;
@@ -60,8 +64,9 @@ footer .container {
 	text-decoration: none;
 	color: var(--color-secondary);
 	background-color: var(--color-main);
-	font-size: 18pt;
+	padding: 12px 18px;
 	font-weight: 300;
+	font-size: 1.3rem;
 	margin: 5px;
 }
 
@@ -70,8 +75,33 @@ footer .container {
 	color: var(--color-main);
 }
 
+/* Mobile Adjustments */
 @media only screen and (max-width: 768px) {
 	.container {
-	  flex-direction: column;
+		flex-direction: column;
 	}
-  }
+
+	/* Scale down buttons on mobile */
+	.button {
+		font-size: 1rem;
+		/* 16px */
+		width: 90%;
+		/* Better mobile touch targets */
+		max-width: 300px;
+		/* Prevent over-stretching */
+		text-align: center;
+	}
+
+	/* Adjust logo sizing */
+	img {
+		max-width: 80vw;
+		/* Better mobile visibility */
+		max-height: 40vh;
+	}
+
+	/* Optional: Adjust iframe height */
+	iframe {
+		height: 180px;
+		/* Slightly taller for mobile */
+	}
+}
